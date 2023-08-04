@@ -1,3 +1,7 @@
+@import 'variables'; // Replace 'variables' with the actual file name if different
+@import "bootstrap";
+@import "custom"; // Import your custom.scss file
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +17,4 @@
  *= require_tree .
  *= require_self
  */
+

@@ -1,31 +1,137 @@
-<h1>New Entry</h1>
-<%= form_with(model: @entry) do |form| %>
- <div>
-   <%= form.label :name %>
-   <%= form.text_field :name %>
- </div>
- <div>
-   <%= form.submit %>
- </div>
-<% end %>
+<style>
+  /* Custom CSS to center the form in the middle of the page */
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-<h1>New Entry</h1>
+  /* Style the form container */
+  .form-container {
+    width: 400px; /* Set a fixed width for the form container */
+    padding: 20px; /* Add some padding to the form container */
+    border: 1px solid #d1c4b9; /* Add a light brown border around the form container */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    background-color: #fff; /* Set a white background color for the form container */
+    text-align: center; /* Center the form inside the container */
+  }
 
-<%= form_with(model: @entry) do |form| %>
+  h1 {
+    font-size: 2rem; /* Increase the font size of the title */
+    margin-bottom: 20px; /* Add more margin below the title */
+    color: #000000da; /* Set a brown color for the title */
+  }
 
- <div>
-   <%= form.label :name %>
-   <%= form.text_field :name %>
- </div>
+  /* Style the form labels and input fields */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Set a darker color for the labels */
+  }
 
- <div>
-   <%= form.submit %>
- </div>
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 
-<% end %>
+  input[type="file"] {
+    margin-top: 10px;
+  }
 
-<br>
+  /* Style the form submit button */
+  input[type="submit"] {
+    background-color: #6699cc; /* Light blue color for the button */
+    color: #fff; /* White color for the button text */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
 
-<div>
- <%= link_to "Back to home", root_path %>
-</div>
+  /* Add some space between the buttons */
+  a:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  /* Apply the custom color scheme to links */
+  a {
+    color: #6699cc; /* Light blue color for links */
+    text-decoration: none;
+  }
+
+  /* Apply the custom color scheme to buttons on the form */
+  input[type="submit"],
+  input[type="submit"]:hover {
+    background-color: #558b2f; /* Dark green color for buttons on hover */
+  }
+
+</style>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Entry</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat&display=swap">
+  <style>
+    /* Your existing CSS styles */
+
+    /* Add focus styles for keyboard navigation */
+    :focus {
+      outline: 2px solid #6699cc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid center-content">
+    <div class="form-container">
+      <h1>New Entry</h1>
+      <%= form_with(model: @entry) do |form| %>
+        <div>
+          <%= form.label :name %>
+          <%= form.text_field :name, required: true %>
+        </div>
+        <div>
+          <%= form.label :description %>
+          <%= form.text_area :description, required: true %>
+        </div>
+        <div>
+          <%= form.label :activity_type %>
+          <%= form.select :activity_type, options_for_select(['Low Intensity', 'High Intensity', 'Meditation', 'Gym Workout', 'Journelling', 'Other']), required: true %>
+        </div>
+        <div>
+          <%= form.label :mood_scale, "Mood Scale (1-10, 10=Positive)" %>
+          <%= form.select :mood_scale, (1..10).to_a, required: true %>
+          
+        </div>
+        <div>
+          <%= form.label :link %>
+          <%= form.text_field :link %>
+        </div>
+        <div>
+          <%= form.label :date %>
+          <%= form.date_select :date, required: true %>
+        </div>
+
+        <div>
+          <%= form.label :image %>
+          <%= form.file_field :image, required: true, accept: "image/*" %>
+        </div>
+        <div>
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
+
+</html>

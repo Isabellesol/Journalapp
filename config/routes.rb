@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'welcome#index'
+  resources :entries, only: [:index, :create, :new, :edit, :update, :destroy]
+  get 'entries/:id', to: 'entries#show', as: 'entry_view'
+  
+  # Move the search route below the resources :entries line
+  get 'entries', to: 'entries#index', as: :search_entries
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'entries', to: 'entries#index', as: :entries_sort
 end
- 
- Rails.application.routes.draw do
-  root 'entries#index'
-  resources :entries, only: [:create, :new]
- end

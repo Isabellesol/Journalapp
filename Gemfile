@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.6"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.4.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -43,7 +43,11 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
+
+gem 'bootstrap', '~> 5.3.0.alpha3'
+
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -69,4 +73,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'sassc-rails'
+  gem 'bootstrap-sass'
+  gem 'sass-rails', '~> 6.0'
+  gem 'jquery-rails'
+  gem 'bcrypt', '~> 3.1.7'  # For password hashing
+  gem 'jwt', '~> 2.2'      # For JSON Web Tokens (JWT) - optional for token-based authentication
+ # gem 'bootstrap', '~> 5.3'
 end

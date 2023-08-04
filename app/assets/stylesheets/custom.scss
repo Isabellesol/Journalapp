@@ -1,0 +1,194 @@
+/* app/assets/stylesheets/custom.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+
+
+.mb-3 {
+    margin-bottom: 1rem; /* Add some margin between each entry */
+  }
+  
+/*Welcome view*/
+
+  .quote {
+    margin: 20px 0; /* Add margin to separate the quote from other content */
+    font-size: 6rem;
+    font-family: 'Caveat', cursive; /* Use the Caveat font */
+    font-style: italic;
+    color: #264a8175;
+  }
+  
+  /* Styling for the company logo */
+  .company-logo {
+    margin-top: 0px; /* Add margin at the top to separate the logo from other content */
+    max-width: 3500px; /* Set the maximum width for the logo image */
+  }
+
+
+  .brand-logo {
+    max-height: 50px; /* Adjust the maximum height of the logo as needed */
+  }
+
+  // Custom SCSS to style the transparent navbar
+.transparent-navbar {
+  background-color: transparent;
+}
+.box {
+  background-color:transparent;
+  border:transparent;
+  padding: 20px;
+  max-width: 700px; /* Adjust the width as needed */
+  margin: 100 auto; /* Center the box horizontally within its parent */
+
+  p {
+    font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    line-height: 1.8; /* Adjust the line height for better readability */
+    text-align: center; /* Center the text */
+    color: #000000da; /* Set the desired text color */
+  }
+}
+
+
+
+
+
+
+
+
+/*INDEX VIEW*/
+
+/* Custom SCSS to center the entries in the middle of the webpage */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent; /* Remove the background color to make it transparent */
+}
+
+/* CSS file */
+.entry-image {
+  width: 500px; /* Set the desired width for the images */
+  height: 300px; /* Set the desired height for the images */
+  object-fit: cover; /* Ensure the images maintain their aspect ratio */
+}
+
+
+.title-container {
+  margin-top: 50px; /* Adjust the margin value to your preference */
+}
+
+/* Rest of your existing SCSS styles */
+
+/* Ensure the buttons are displayed horizontally */
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjust the gap between buttons as needed */
+}
+
+
+
+/* Define fixed size for entry boxes */
+.entry-container {
+  width: 500px; /* Adjust the width as needed */
+  height: 800px; /* Adjust the height as needed */
+  margin-left: 50px; /* Add left margin */
+}
+
+
+/* Add some margin between each entry */
+.mb-3 {
+  margin-bottom: 20px; /* Increase the margin between entries */
+  padding: 60px; /* Add more padding to the entry container */
+  border: transparent; /* Add a light brown border around each entry */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  background-color: #fff; /* Set a white background color for each entry */
+  text-align: left; /* Center the text inside each entry */
+}
+
+h4 {
+  font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+  font-size: 2.0rem; /* Increase the font size of the title */
+  margin-bottom: 30px; /* Add more margin below the title */
+  text-align: center; /* Center the title text */
+  color: #000000da;/* Set a brown color for the title */
+}
+
+h5 {
+  font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+  font-size: 2.0rem; /* Increase the font size of the title */
+  margin-bottom: 30px; /* Add more margin below the title */
+  text-align: center; /* Center the title text */
+  color: #000000da;/* Set a brown color for the title */
+}
+
+h1 {
+  font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+  font-size: 2.5rem; /* Increase the font size of the title */
+  margin-bottom: 30px; /* Add more margin below the title */
+  text-align: center; /* Center the title text */
+  color: #000000da;/* Set a brown color for the title */
+}
+
+h2 {
+  font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+  font-size: 2.5rem; /* Increase the font size of the title */
+  margin-bottom: 30px; /* Add more margin below the title */
+  text-align: center; /* Center the title text */
+  color: #000000da;/* Set a brown color for the title */
+}
+
+/* Define fixed size for entry boxes */
+.fixed-entry {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  background-color:transparent;
+}
+
+/* Style the buttons */
+.btn {
+  margin-top: 10px;
+}
+
+/* Add some space between the buttons */
+.btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Add a custom color scheme */
+:root {
+  --primary-color: #4876a4; /* Light blue color for primary elements */
+  --success-color: #426a26; /* Dark green color for success elements */
+  --danger-color: #902727; /* Dark red color for danger elements */
+  --light-color: #e5f0f7; /* Light blue color for background */
+}
+
+/* Apply the custom color scheme to elements */
+body {
+  background-color: var(--light-color);
+}
+
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: transparent;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: transparent;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border-color: transparent;
+}
+
+/* Increase the font size of entry names */
+h3 {
+  font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #000000da;
+}

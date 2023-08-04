@@ -1,0 +1,189 @@
+<style>
+/* Custom CSS to center the entries in the middle of the webpage */
+.center-content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: transparent; /* Set a light beige background color for the entire page */
+}
+
+
+
+
+/* Add some margin between each entry */
+.mb-3 {
+margin-bottom: 20px; /* Increase the margin between entries */
+padding: 20px; /* Add more padding to the entry container */
+border: 1px solid #d1c4b9; /* Add a light brown border around each entry */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+background-color: #fff; /* Set a white background color for each entry */
+text-align: center; /* Center the text inside each entry */
+}
+
+
+/* Style the form container */
+.form-container {
+width: 400px; /* Set a fixed width for the form container */
+padding: 20px; /* Add some padding to the form container */
+border: 1px solid #d1c4b9; /* Add a light brown border around the form container */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+background-color: #fff; /* Set a white background color for the form container */
+text-align: center; /* Center the form inside the container */
+}
+
+
+
+
+
+
+h1 {
+font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+font-size: 2.5rem; /* Increase the font size of the title */
+margin-bottom: 30px; /* Add more margin below the title */
+text-align: center; /* Center the title text */
+color: #8d6e63; /* Set a brown color for the title */
+}
+
+
+
+
+/* Style the buttons */
+.btn {
+margin-top: 10px;
+}
+
+
+
+
+/* Add some space between the buttons */
+.btn:not(:last-child) {
+margin-right: 10px;
+}
+
+
+
+
+/* Add a custom color scheme */
+:root {
+--primary-color: #6699cc; /* Light blue color for primary elements */
+--success-color: #558b2f; /* Dark green color for success elements */
+--danger-color: #cc5555; /* Dark red color for danger elements */
+--light-color: #e5f0f7 /* Light beige color for background */
+}
+
+
+
+
+/* Apply the custom color scheme to elements */
+body {
+background-color: var(--light-color);
+}
+
+
+
+
+h1 {
+color: var(--primary-color);
+}
+
+
+
+
+.btn-primary {
+background-color: var(--primary-color);
+border-color: var(--primary-color);
+}
+
+
+
+
+.btn-danger {
+background-color: var(--danger-color);
+border-color: var(--danger-color);
+}
+
+
+
+
+.btn-success {
+background-color: var(--success-color);
+border-color: var(--success-color);
+}
+
+
+.edit-view-container {
+    background-color: transparent; /* Set the desired background color */
+  }
+
+
+
+
+
+/* Increase the font size of entry names */
+h3 {
+font-family: 'Edu SA Beginner', cursive; /* Use the Caveat font for the text */
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+</style>
+
+<html lang="en">
+
+<div class="container-fluid center-content edit-view-container">
+  <div class="form-container">
+    <h1>Edit Entry</h1>
+
+    <%= form_for @entry do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :activity_type %>
+    <%= f.select :activity_type, ['Low Intensity', 'High Intensity', 'Meditation', 'Gym Workout', 'Journelling', 'Other'], { include_blank: true }, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :mood_scale, "Mood Scale (1-10, 10=Positive)" %>
+    <%= f.select :mood_scale, (1..10).to_a, { include_blank: true }, class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :link %>
+    <%= f.text_field :link, class: "form-control" %>
+  </div>
+
+    <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :image %>
+  <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <% if @entry.image.attached? %>
+  <div class="form-group">
+    <%= f.label :current_image %>
+    <%= image_tag @entry.image, class: "img-thumbnail" %>
+  </div>
+<% end %>
+
+    <%= f.submit "Update Entry", class: "btn btn-primary" %>
+  <% end %>
+<div>
+<div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

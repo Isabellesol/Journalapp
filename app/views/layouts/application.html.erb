@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Japp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Mindfulness Journal</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag 'custom', media: 'all' %>
+</head>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+<body>
+  <%= render '/shared/navbar' %>
+  <%= yield %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Your script to use jQuery (without import statement) -->
+  <script>
+    $(document).on('turbolinks:load', function() {
+      $('[data-confirm]').on('click', function() {
+        return confirm($(this).data('confirm'));
+      });
+    });
+  </script>
+
+  <%= javascript_importmap_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
